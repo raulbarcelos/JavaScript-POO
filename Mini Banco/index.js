@@ -3,6 +3,8 @@ class Cliente{
     cpf;
     agencia;
     saldo;
+    rg;
+    estado;
 }
 
 const cliente1 = new Cliente();
