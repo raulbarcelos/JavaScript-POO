@@ -13,6 +13,7 @@ class ContaCorrente{
     sacar(valor){
         if(this.saldo >= valor){
             this.saldo -= valor;
+            console.log(this.saldo)
         }else{
             console.log("Não é possível sacar valor maior que o saldo.");
         }
@@ -20,6 +21,7 @@ class ContaCorrente{
     depositar(valor){
         if(valor>0){
             this.saldo += valor;
+            console.log(this.saldo)
         }else{
             console.log("Não é possível depositar valor menor ou igual a 0.");
         }
@@ -37,9 +39,6 @@ contaCliente1.saldo = 150
 
 console.log(contaCliente1.saldo)
 contaCliente1.sacar(200)
-console.log(contaCliente1.saldo)
 contaCliente1.sacar(80)
-console.log(contaCliente1.saldo)
 contaCliente1.depositar(950)
-console.log(contaCliente1.saldo)
 console.log(cliente1);
