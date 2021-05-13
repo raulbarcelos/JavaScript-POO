@@ -8,15 +8,10 @@ export class ContaCorrente extends Conta{
         ContaCorrente.numeroDeContas += 1;
     }
 
+    //sobreescrevendo o método sacar da classe mãe
     sacar(valor){
-        let taxa = 1.1
-        const totalSaque = valor * taxa;
-        if(this._saldo < totalSaque){
-            return;
-        }
-    
-        this._saldo -= totalSaque;
-        return valor;
+        let taxa = 1.1;
+        return this._sacar(valor, taxa);
     }
 
 }
