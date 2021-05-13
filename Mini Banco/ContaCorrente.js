@@ -5,10 +5,13 @@ export class ContaCorrente{
     conta;    
     _cliente;
     _saldo = 150;
+    static numeroDeContas=0;
 
-    constructor(cliente, agencia){
+    constructor(agencia, conta, cliente){
         this.agencia = agencia;
-        this.cliente = cliente //this.CLIENTE utiliza o acessor cliente e não a variável _cliente.
+        this.conta = conta;
+        this.cliente = cliente; //this.CLIENTE utiliza o acessor cliente e não a variável _cliente.
+        ContaCorrente.numeroDeContas += 1;
     }
     
     //criando acessores
