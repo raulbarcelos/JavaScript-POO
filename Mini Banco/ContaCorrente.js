@@ -1,20 +1,17 @@
 import { Cliente } from "./Cliente.js";
 
 export class ContaCorrente{
-    agencia;
-    conta;    
-    _cliente;
-    _saldo = 150;
     static numeroDeContas=0;
 
     constructor(agencia, conta, cliente){
         this.agencia = agencia;
         this.conta = conta;
-        this.cliente = cliente; //this.CLIENTE utiliza o acessor cliente e não a variável _cliente.
+        this._cliente = cliente; //this.CLIENTE utiliza o acessor cliente e não a variável _cliente.
+        this._saldo = 0;
         ContaCorrente.numeroDeContas += 1;
     }
     
-    //criando acessores
+    //criando acessores (encapsulando)
     set cliente(novoValor){
         if(novoValor instanceof Cliente)
         this._cliente = novoValor;
