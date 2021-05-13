@@ -1,9 +1,15 @@
+//classe abstrata
+//Só pode ser herdada. Nunca pode ser instanciada diretamente.
 export class Conta{
 
     constructor(saldoInicial, cliente, agencia){
         this._saldo = saldoInicial;
         this._cliente = cliente;
         this._agencia = agencia;
+        //bloqueando instancias diretas da classe Conta. Dessa forma mesmo que o desenvolvedor tente instaciar ele tera um throw error.
+        if(this.constructor == Conta){
+            throw new Error("Voce não deveria instanciar um objeto do tipo conta, pois é uma classe abstrata!");
+        }
     }
     
     //criando acessores (encapsulando)
