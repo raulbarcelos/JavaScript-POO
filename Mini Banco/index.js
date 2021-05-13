@@ -8,23 +8,21 @@ class Cliente{
 class ContaCorrente{
     agencia;
     conta;
-    saldo;
+    _saldo = 150;
 
     sacar(valor){
-        if(this.saldo >= valor){
-            this.saldo -= valor;
-            console.log(this.saldo)
-        }else{
-            console.log("Não é possível sacar valor maior que o saldo.");
+        if(this._saldo < valor){
+            return;
         }
+
+        this._saldo -= valor;
     }
     depositar(valor){
-        if(valor>0){
-            this.saldo += valor;
-            console.log(this.saldo)
-        }else{
-            console.log("Não é possível depositar valor menor ou igual a 0.");
+        if(valor<=0){
+            return;
         }
+
+        this._saldo += valor;
     }
 }
 
@@ -35,9 +33,7 @@ cliente1.cpf = 12312312375;
 const contaCliente1 = new ContaCorrente();
 contaCliente1.agencia = 3001;
 contaCliente1.conta = 100098;
-contaCliente1.saldo = 150
 
-console.log(contaCliente1.saldo)
 contaCliente1.sacar(200)
 contaCliente1.sacar(80)
 contaCliente1.depositar(950)
