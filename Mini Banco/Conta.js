@@ -22,14 +22,20 @@ export class Conta{
 
 
     sacar(valor){
-        
-        if(this._saldo < valor){
-            return;
+        let taxa = 1;
+        return this._sacar(valor, taxa);
+    }
+
+    _sacar(valor, taxa){
+        const totalSaque = valor * taxa;
+        if(this._saldo < totalSaque){
+            return 0;
         }
     
-        this._saldo -= valor;
+        this._saldo -= totalSaque;
         return valor;
     }
+
     depositar(valor){
         if(valor<=0){
             return;
