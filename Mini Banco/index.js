@@ -4,13 +4,8 @@ import {ContaCorrente} from "./ContaCorrente.js"
 const cliente1 = new Cliente("Cliente exemplo 1", 12312312334);
 const cliente2 = new Cliente("Cliente Exemplo DOISS", 12313332215);
 
-const contaCliente1 = new ContaCorrente();
-contaCliente1.agencia = 3001;
-contaCliente1.cliente = cliente1;
-
-const contaCliente2 = new ContaCorrente();
-contaCliente2.agencia = 3001;
-contaCliente2.cliente = cliente2;
+const contaCliente1 = new ContaCorrente(3301, cliente1);
+const contaCliente2 = new ContaCorrente(3301, cliente2);
 
 contaCliente1.sacar(200);
 contaCliente1.sacar(80);

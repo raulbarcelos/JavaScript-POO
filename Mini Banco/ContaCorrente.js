@@ -5,7 +5,13 @@ export class ContaCorrente{
     conta;    
     _cliente;
     _saldo = 150;
+
+    constructor(cliente, agencia){
+        this.agencia = agencia;
+        this.cliente = cliente //this.CLIENTE utiliza o acessor cliente e não a variável _cliente.
+    }
     
+    //criando acessores
     set cliente(novoValor){
         if(novoValor instanceof Cliente)
         this._cliente = novoValor;
